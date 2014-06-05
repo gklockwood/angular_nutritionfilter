@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example51-production</title>
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  
+
+  
+</head>
+<body ng-app="">
+    <div ng-init="friends = [{fruit:'Apple', calories:'95 calories'},
+                           {fruit:'Apricot', calories:'79 calories'},
+                           {fruit:'Banana', calories:'105 calories'},
+                           {fruit:'Blueberry', calories:'85 calories'},
+                           {fruit:'Cherry', calories:'77 calories'},
+                           {fruit:'Clementine', calories:'35 calories'}]"></div>
+
+  Search: <input ng-model="searchText">
+  <table id="searchTextResults">
+    <tr><th>Fruit</th><th>Calories</th></tr>
+    <tr ng-repeat="friend in friends | filter:searchText">
+      <td>{{friend.fruit}}</td>
+      <td>{{friend.calories}}</td>
+    </tr>
+  </table>
+  <hr>
+  Any: <input ng-model="search.$"> <br>
+  fruit only <input ng-model="search.fruit"><br>
+  calories only <input ng-model="search.calories"><br>
+  Equality <input type="checkbox" ng-model="strict"><br>
+  <table id="searchObjResults">
+    <tr><th>Fruit</th><th>Calories</th></tr>
+    <tr ng-repeat="friendObj in friends | filter:search:strict">
+      <td>{{friendObj.fruit}}</td>
+      <td>{{friendObj.calories}}</td>
+    </tr>
+  </table>
+</body>
+</html>
