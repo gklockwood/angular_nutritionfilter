@@ -13,7 +13,7 @@
   
 </head>
 <body ng-app="">
-    <div ng-init="friends = [{fruit:'Apple', calories:'95'},
+    <div ng-init="nutritions = [{fruit:'Apple', calories:'95'},
                            {fruit:'Apricot', calories:'79'},
                            {fruit:'Banana', calories:'105'},
                            {fruit:'Blueberry', calories:'85'},
@@ -23,9 +23,9 @@
   Search: <input ng-model="searchText">
   <table id="searchTextResults">
     <tr><th>Fruit</th><th>Calories</th></tr>
-    <tr ng-repeat="friend in friends | filter:searchText">
-      <td>{{friend.fruit}}</td>
-      <td>{{friend.calories}}</td>
+    <tr ng-repeat="nutrition in nutritions | filter:searchText">
+      <td>{{nutrition.fruit}}</td>
+      <td>{{nutrition.calories}}</td>
     </tr>
   </table>
   <hr>
@@ -35,9 +35,9 @@
   Equality <input type="checkbox" ng-model="strict"><br>
   <table id="searchObjResults">
     <tr><th>Fruit</th><th>Calories</th></tr>
-    <tr ng-repeat="friendObj in friends | filter:search:strict">
-      <td>{{friendObj.fruit}}</td>
-      <td>{{friendObj.calories}}</td>
+    <tr ng-repeat="nutritionObj in nutritions | filter:search:strict">
+      <td>{{nutritionObj.fruit}}</td>
+      <td>{{nutritionObj.calories}}</td>
     </tr>
   </table>
 </body>
